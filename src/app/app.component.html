@@ -1,0 +1,18 @@
+<p>
+<input type="text" [(ngModel)]="name" />
+</p>
+
+
+
+
+<ng-container *ngIf="( items | filter : name) as result">
+  <p *ngFor="let item of result">
+    {{item.name}}
+  </p>
+  
+  
+  <p *ngIf="result.length === 0">No Result</p>  
+</ng-container>
+
+
+<!-- https://netbasal.com/using-pipe-results-in-angular-templates-430683fa2213 -->
